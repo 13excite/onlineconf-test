@@ -1,15 +1,16 @@
 version: '3'
 services:
   onlineconf-updater:
+    platform: linux/amd64
     build: .
     image: onlineconf-updater
     volumes:
       - ./data:/usr/local/etc/onlineconf
     environment:
-      ONLINECONF_ADMIN_HOST: onlineconf-admin
+      ONLINECONF_ADMIN_HOST: 192.168.0.118
       ONLINECONF_ADMIN_PORT: 80
-      ONLINECONF_UPDATER_USER: gopher
-      ONLINECONF_UPDATER_PASSWORD: gopher
+      ONLINECONF_UPDATER_USER: squirrel
+      ONLINECONF_UPDATER_PASSWORD: squirrel
     restart: always
 networks:
   default:
